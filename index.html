@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario en Memoria</title>
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- PUNTO 9: FORMULARIO DE REGISTRO (ACTIVIDAD GUIADA 2) -->
+    <!-- ========================================== -->
+    <h2>Registro de Productos</h2>
+    
+    <form id="formularioProducto">
+        <input type="text" id="prodNombre" placeholder="Nombre del producto" required>
+        
+        <select id="prodCategoria" required>
+            <option value="">Seleccione una categoría</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Ropa">Ropa</option>
+        </select>
+
+        <input type="number" id="prodPrecio" placeholder="Precio ($)" min="1" required>
+        <input type="number" id="prodStock" placeholder="Stock inicial" min="0" required>
+        
+        <button type="submit" id="btnAgregar">Registrar Producto</button>
+    </form>
+
+    <br><hr><br>
+
+    <!-- ========================================== -->
+    <!-- PUNTO 11: CONTROLES DE FILTROS Y CONSULTAS (ACTIVIDAD GUIADA 4) -->
+    <!-- ========================================== -->
+    <h3>Filtros y Consultas</h3>
+    <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+        <!-- Barra de búsqueda por nombre -->
+        <input type="text" id="inputBuscar" placeholder="Buscar por nombre...">
+
+        <!-- Filtro por categoría -->
+        <select id="filtroCategoria">
+            <option value="TODOS">Todas las categorías</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Ropa">Ropa</option>
+        </select>
+
+        <!-- Botón para ordenar -->
+        <button id="btnOrdenarPrecio">Ordenar por Precio (Menor a Mayor)</button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PUNTO 10: TABLA DE PRODUCTOS (ACTIVIDAD GUIADA 3) -->
+    <!-- ========================================== -->
+    <h3>Lista de Productos Registrados</h3>
+    <table id="tablaProductos" border="1" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- JavaScript usará este espacio para meter las filas dinámicamente -->
+        </tbody>
+    </table>
+    <!-- ========================================== -->
+    <!-- PROYECTO INTEGRADOR: PANEL DE ESTADÍSTICAS -->
+    <!-- ========================================== -->
+    <br><hr><br>
+    <h3>Panel de Estadísticas (Uso de reduce y filter)</h3>
+    <div style="background-color: #f4f4f4; padding: 15px; border-radius: 5px; margin-bottom: 15px;">
+        <p><strong>Valor Total del Inventario:</strong> <span id="statValorTotal">$0</span></p>
+        <p><strong>Productos con Stock Bajo (Menos de 3 unidades):</strong> <span id="statStockBajo">0</span></p>
+    </div>
+<!-- ========================================== -->
+    <!-- CONTROLES DEL PUNTO 12: CONVERSIÓN A JSON -->
+    <!-- ========================================== -->
+    <br><hr><br>
+    <h3>Prueba de Persistencia (Conversión a JSON)</h3>
+    <div style="margin-bottom: 15px;">
+        <button id="btnConvertirJSON">Probar Conversión JSON</button>
+    </div>
+    
+    <h4>Texto JSON Generado (JSON.stringify):</h4>
+    <textarea id="txtJSON" rows="5" style="width: 100%; font-family: monospace;" readonly placeholder="Aquí se mostrará el string JSON..."></textarea>
+    <!-- Enlace al archivo de JavaScript único del proyecto -->
+    <script src="js/app.js"></script>
+</body>
+</html>
